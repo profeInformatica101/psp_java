@@ -10,8 +10,8 @@ public class Ej1_Basico {
 	public static void main(String [] args) throws Exception {
 		Utils.imprimeArgs(args);
 		try {
-			Process proceso = new ProcessBuilder(Utils.sh(String.join(" ", args))).start();
-			
+			 ProcessBuilder proceso_ = new ProcessBuilder(Utils.sh(String.join(" ", args)));//.start();
+			 Process proceso = proceso_.start();
 			/**
 			 * INPUT STREAM :: Flujo de entrada de bytes (0's y 1's) en byte[]
 			 */
@@ -31,16 +31,13 @@ public class Ej1_Basico {
 			/*Espera que finalice el Proceso*/
 			int rerturn_code =proceso.waitFor();
 			if(rerturn_code == 0) {
-				
+				System.out.println("Todo fue bien");
 			}else {
 				throw new Exception("El comando no es correcto");
 			}
 			
 			System.out.println("Code:"+rerturn_code);
-			
-			
-			
-			
+
 			
 		} catch (IOException | InterruptedException e) {
 			
