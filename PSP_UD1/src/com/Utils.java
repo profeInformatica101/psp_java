@@ -14,6 +14,14 @@ public class Utils {
 	    return isWindows() ? Arrays.asList("cmd","/c",cmd)
 	                       : Arrays.asList("sh","-c",cmd);
 	  }
+
+
+	  public static void imprimeArgs(String[] args) {
+		for(String arg : args) {
+			System.out.print(arg + " ");
+		}
+		
+	  }
 	  
 	/*  public static void main(String [] args) {
 		  System.out.println(System.getProperty("os.name"));
